@@ -1,4 +1,8 @@
+import { assert } from 'console'
 import got from 'got/dist/source'
+
+const authorization = process.env.SWITCHBOT_TOKEN
+assert(authorization, 'env not setup: SWITCHBOT_TOKEN')
 
 export type MotionDeviceLog = {
   statusCode: string
@@ -16,9 +20,7 @@ export type Response = { body: { deviceList: unknown[] } }
 
 const cli = got.extend({
   prefixUrl: 'https://api.switch-bot.com/v1.0',
-  headers: {
-    authorization: process.env.SWITCHBOT_TOKEN || '',
-  },
+  headers: { authorization },
   responseType: 'json',
 })
 
