@@ -1,5 +1,5 @@
 import { assert } from 'console'
-import got from 'got/dist/source'
+import got from 'got'
 
 const authorization = process.env.SWITCHBOT_TOKEN
 assert(authorization, 'env not setup: SWITCHBOT_TOKEN')
