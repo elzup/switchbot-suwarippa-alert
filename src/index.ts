@@ -29,11 +29,8 @@ async function main() {
   const motionSensorId = 'F51BAA09E2E5'
 
   while (true) {
-    // console.log(devices.body.deviceList)
-
     const log = await getDevice(motionSensorId)
     const now = +new Date()
-    console.log([now, log.body.moveDetected, log.body.brightness].join('\t'))
 
     if (log.body.moveDetected) {
       lastMoved = +new Date()
