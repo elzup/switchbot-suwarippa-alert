@@ -10,7 +10,8 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "@elzup/kit": "^1.0.6",
+    "@elzup/kit": "^1.0.8",
+    "axios": "^0.24.0",
     "got": "^11.8.3"
   },
   "scripts": {

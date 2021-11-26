@@ -14,10 +14,10 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@elzup/kit@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@elzup/kit/-/kit-1.0.6.tgz#f26ad2482d44c1f02870abd44d136c4cbcd152c0"
-  integrity sha512-9NA3crHgkOichYOKxW/mqjNOHzF+hEqg+cL0fxuVhXd9944j8qpy5lgaB38Bl5hhvBA65zeFVUNrCg/HM5tFiQ==
+"@elzup/kit@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@elzup/kit/-/kit-1.0.8.tgz#d5400203627024057f1e74b6f5823930797710cc"
+  integrity sha512-XRGY4gdFzuf/bidWYBM6HATi6kyPJ9IiAuJxiTtQtJPAeUppF8raptTb6KSP9jFxHgXmvuU9xyjDYfWyeF/1Pw==
 
 "@jest/types@^27.2.5":
   version "27.2.5"
@@ -172,6 +172,13 @@ arg@^4.1.0:
   resolved "https://registry.yarnpkg.com/arg/-/arg-4.1.3.tgz#269fc7ad5b8e42cb63c896d5666017261c144089"
   integrity sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==
 
+axios@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.24.0.tgz#804e6fa1e4b9c5288501dd9dff56a7a0940d20d6"
+  integrity sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA==
+  dependencies:
+    follow-redirects "^1.14.4"
+
 cacheable-lookup@^5.0.3:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/cacheable-lookup/-/cacheable-lookup-5.0.4.tgz#5a6b865b2c44357be3d5ebc2a467b032719a7005"
@@ -250,6 +257,11 @@ end-of-stream@^1.1.0:
   integrity sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==
   dependencies:
     once "^1.4.0"
+
+follow-redirects@^1.14.4:
+  version "1.14.5"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.5.tgz#f09a5848981d3c772b5392309778523f8d85c381"
+  integrity sha512-wtphSXy7d4/OR+MvIFbCVBDzZ5520qV8XfPklSN5QtxuMUJZ+b0Wnst1e1lCDocfzuCkHqj8k0FpZqO+UIaKNA==
 
 get-stream@^5.1.0:
   version "5.2.0"

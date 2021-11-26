@@ -1,5 +1,5 @@
+import { postSlack } from './slack'
 import { getDevice } from './switchbot'
-import { sendSwarippa } from './nodeRed'
 
 const SUSPEND_DETECT_TIME = 30 * 60 * 1000
 
@@ -19,7 +19,8 @@ const isSuspend = (
 }
 
 function notice(now: number) {
-  sendSwarippa(now)
+  postSlack()
+  // sendSwarippa(now)
 }
 
 async function main() {
