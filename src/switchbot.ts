@@ -1,8 +1,8 @@
-import { assert } from 'console'
+import { getEnv } from '@elzup/kit/lib/getEnv'
 import got from 'got'
 
-const authorization = process.env.SWITCHBOT_TOKEN
-const sensorId = process.env.MONITOR_DEVICE_ID
+const authorization = getEnv('SWITCHBOT_TOKEN')
+const sensorId = getEnv('MONITOR_DEVICE_ID')
 if (!authorization) {
   throw new Error('env not setup: SWITCHBOT_TOKEN')
 }

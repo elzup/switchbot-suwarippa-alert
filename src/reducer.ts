@@ -17,6 +17,7 @@ const isSuspend = (
   return suspendTime >= suspendDetectTime
 }
 
+// if not detected some time (SUSPEND_DETECT_TIME), once do notice
 export const reducer = (
   { noticed, lastMoved }: State,
   detected: boolean,

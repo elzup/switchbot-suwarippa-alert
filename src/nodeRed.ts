@@ -1,8 +1,6 @@
-import assert from 'assert'
+import { getEnv } from '@elzup/kit/lib/getEnv'
 import got from 'got'
 
-const { NODE_RED_API_PATH } = process.env
+const url = getEnv('NODE_RED_URL')
 
-assert(NODE_RED_API_PATH, 'env not setup: SWITCHBOT_TOKEN')
-
-export const sendSwarippa = (now: number) => got.post(NODE_RED_API_PATH)
+export const sendSwarippa = (now: number) => got.post(url)

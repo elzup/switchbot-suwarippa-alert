@@ -1,13 +1,10 @@
-import { makeSlackParams } from '@elzup/kit/dist/lib/slack'
+import { makeSlackParams } from '@elzup/kit/lib/slack'
+import { getEnv } from '@elzup/kit/lib/getEnv'
 import axios from 'axios'
 
-const { SLACK_URL } = process.env
+const SLACK_URL = getEnv('SLACK_URL')
 
 export function postSlack() {
-  if (!SLACK_URL) {
-    throw new Error('env not setup: SLACK_URL')
-  }
-
   axios.request(
     makeSlackParams(SLACK_URL, {
       text: '動いて！',

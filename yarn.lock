@@ -314,10 +314,10 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@elzup/kit@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@elzup/kit/-/kit-1.0.8.tgz#d5400203627024057f1e74b6f5823930797710cc"
-  integrity sha512-XRGY4gdFzuf/bidWYBM6HATi6kyPJ9IiAuJxiTtQtJPAeUppF8raptTb6KSP9jFxHgXmvuU9xyjDYfWyeF/1Pw==
+"@elzup/kit@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@elzup/kit/-/kit-1.1.1.tgz#cbb0a53c5d7200e3606da9b37236e01ce6994bb0"
+  integrity sha512-ai8rIzXLqyXmowp8emc8PUxoTAsizLOqni5NHgpUOOi4wbImbkdVIhzzCZZ/Bi8TdBi8Y/nboApXsDFtl7zD3Q==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
