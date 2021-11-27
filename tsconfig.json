@@ -16,6 +16,6 @@
     "types": ["node", "@types/jest"],
     "baseUrl": "src/@types"
   },
-  "include": ["src"],
+  "include": ["src", "tests", "reducer.ts"],
   "exclude": ["node_modules", "**/*.es.js"]
 }
