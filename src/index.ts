@@ -1,5 +1,5 @@
 import { postSlack } from './slack'
-import { getDevice } from './switchbot'
+import { getDevice, getMoveDetected } from './switchbot'
 
 const SUSPEND_DETECT_TIME = 30 * 60 * 1000
 
@@ -23,27 +23,43 @@ function notice(now: number) {
   // sendSwarippa(now)
 }
 
+const check = getMoveDetected
+
+type State = {
+  lastMoved: number
+  noticed: boolean
+}
+const initialState: State = {
+  lastMoved: 0,
+  noticed: false,
+}
+
+const reducer = (
+  { noticed, lastMoved }: State,
+  detected: boolean,
+  now: number
+): { state: State; doNotice: boolean } => {
+  if (detected) {
+    return { state: { lastMoved: +new Date(), noticed }, doNotice: false }
+  }
+  const suspend = isSuspend(now, lastMoved, SUSPEND_DETECT_TIME, detected)
+  const doNotice = !noticed && suspend
+  if (doNotice) {
+    noticed = true
+  }
+  return { state: { noticed: doNotice || noticed, lastMoved }, doNotice }
+}
+
 async function main() {
-  // const devices = await getDevices()
-  let lastMoved = 0
-  let noticed = false
-  const motionSensorId = 'F51BAA09E2E5'
+  let state = initialState
 
   while (true) {
-    const log = await getDevice(motionSensorId)
+    const detected = await check()
     const now = +new Date()
+    const { state: newState, doNotice } = reducer(state, detected, now)
+    if (doNotice) notice(now)
+    state = newState
 
-    if (log.body.moveDetected) {
-      lastMoved = +new Date()
-      noticed = false
-    }
-    if (
-      !noticed &&
-      isSuspend(now, lastMoved, SUSPEND_DETECT_TIME, log.body.moveDetected)
-    ) {
-      notice(now)
-      noticed = true
-    }
     await sleep(10 * 1000)
   }
 }
