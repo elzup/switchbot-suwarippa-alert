@@ -28,8 +28,5 @@ export const reducer = (
   }
   const suspend = isSuspend(now, lastMoved, SUSPEND_DETECT_TIME, detected)
   const doNotice = !noticed && suspend
-  if (doNotice) {
-    noticed = true
-  }
   return { state: { noticed: doNotice || noticed, lastMoved }, doNotice }
 }

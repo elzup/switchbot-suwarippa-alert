@@ -3,9 +3,6 @@ import got from 'got'
 
 const authorization = getEnv('SWITCHBOT_TOKEN')
 const sensorId = getEnv('MONITOR_DEVICE_ID')
-if (!authorization) {
-  throw new Error('env not setup: SWITCHBOT_TOKEN')
-}
 
 export type MotionDeviceLog = {
   statusCode: string
@@ -32,8 +29,6 @@ export const getDevice = (deviceId: string) =>
   cli.get(`devices/${deviceId}/status`).json<DeviceLog>()
 
 export async function getMoveDetected() {
-  if (!sensorId) throw new Error('env not setup: MONITOR_DEVICE_ID')
-
   const log = await getDevice(sensorId)
   return log.body.moveDetected
 }
